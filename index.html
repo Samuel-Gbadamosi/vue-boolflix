@@ -5,21 +5,31 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <!-- vue link -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+  <!-- vue link -->
+  <!-- link ajax -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
+  <!-- link ajax -->
+<!-- link css -->
   <link rel="stylesheet" href="css/style.css">
+
+  <!-- font aweomse -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css" integrity="sha512-dBL5cY4qTt42J1cfabCHTYR7KMztyd+n4t2GhD6EH/MKWJIIHuEYckJ1nHEpTwIaiDkrjzbc6WyiSkdLP+3INQ==" crossorigin="anonymous" />
+  <!-- font aweomse -->
+
 </head>
 <body>
-  <div id="app">
+  <div id="app" >
 
     <div class="sect1">
       <img class="logo" src="https://cdn.pixabay.com/photo/2021/01/30/23/31/netflix-logo-5965538__340.png" alt="logo-pic">
 
       <input type="text"  placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriestv" v-model="query">
     </div>
-    <div class="sect2">
+    <div class="sect2" class="container">
 
-      <div  v-for="m in movies">
+      <div class="boxes"  v-for="m in movies">
         <p> Original title : {{m.original_title}}</p>
          <p> title : {{m.title}}</p>
           <p> Language : {{m.original_language}}</p>
