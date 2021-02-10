@@ -20,27 +20,44 @@
 
 </head>
 <body>
-  <div id="app" >
+  <body>
+     <div id="app">
 
-    <div class="sect1">
-      <img class="logo" src="https://cdn.pixabay.com/photo/2021/01/30/23/31/netflix-logo-5965538__340.png" alt="logo-pic">
 
-      <input type="text"  placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriestv" v-model="query">
-    </div>
-    <div class="sect2" class="container">
+      <header>
+          <div class="container">
+              <img class="logo" src="https://cdn.pixabay.com/photo/2021/01/30/23/31/netflix-logo-5965538__340.png" alt="logo-pic">
 
-      <div class="boxes"  v-for="m in movies">
-        <p> Original title : {{m.original_title}}</p>
-         <p> title : {{m.title}}</p>
-          <p> Language : {{m.original_language}}</p>
-          <p> Votes: {{m.vote_average}}</p>
+              <input type="text"  placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriestv" v-model="query">
+          </div>
+
+
+      </header>
+
+      <!--  -->
+
+      <div class="cds-container container">
+          <!-- Disco ad esempio -->
+          <div class="cd" v-for="m in movies">
+            <img v-if="(m.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + m.poster_path"  alt="">
+            <img v-else="" :src="empty" class="empty" alt="">
+            <ul>
+              <h3>Original Title  {{m.original_title}} </h3>
+              <span>Title : {{m.title}}</span>
+              <span>Language : {{m.original_language}}</span>
+
+
+            </ul>
+
+          </div>
       </div>
 
-    </div>
-
-
+  <div>
 
   </div>
+      <script src="js/script.js" charset="utf-8"></script>
+  </body>
+
 
 
 <script src="js/script.js" charset="utf-8"></script>

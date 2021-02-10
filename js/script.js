@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    empty:'error 404 Unavailable',
     tvseries: [],
     movies: [],
     query: '',
