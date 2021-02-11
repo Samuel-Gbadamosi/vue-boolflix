@@ -15,7 +15,7 @@
   <link rel="stylesheet" href="css/style.css">
 
   <!-- font aweomse -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/brands.min.css" integrity="sha512-dBL5cY4qTt42J1cfabCHTYR7KMztyd+n4t2GhD6EH/MKWJIIHuEYckJ1nHEpTwIaiDkrjzbc6WyiSkdLP+3INQ==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
   <!-- font aweomse -->
 
 </head>
@@ -41,14 +41,36 @@
           <div class="cd" v-for="m in movies">
             <img v-if="(m.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + m.poster_path"  alt="">
             <img v-else="" :src="empty" class="empty" alt="">
-            <ul>
-              <h3>Original Title  {{m.original_title}} </h3>
+              <h3>{{m.original_title}} </h3>
               <span>Title : {{m.title}}</span>
+
               <span>Language : {{m.original_language}}</span>
+              <span> votes : {{ m.vote_average}}</span>
+              <ul>
+                <li>
+                  <i v-for="s in iconVote(m.vote_average)" class="far fa-star" class="col"> </i>
+
+                </li>
+
+              </ul>
+
+
+
+
+          </div>
+
+
+          <div class="cd" v-for="tv in tvseries">
+            <img v-if="(tv.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + tv.poster_path"  alt="">
+            <img v-else="" :src="empty" class="empty" alt="">
+            <ul>
+              <h3>{{tv.original_name}} </h3>
+              <span>Title : {{tv.title}}</span>
+              <span>Language : {{tv.original_language}}</span>
+              <span> votes : {{tv.average}}</span>
 
 
             </ul>
-
           </div>
       </div>
 

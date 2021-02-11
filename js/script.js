@@ -1,6 +1,7 @@
 var app = new Vue({
   el: '#app',
   data: {
+    stars:0,
     empty:'error 404 Unavailable',
     tvseries: [],
     movies: [],
@@ -40,6 +41,10 @@ var app = new Vue({
         })
         .catch((error) => alert('errori'));
 
+    },
+    iconVote(index){
+
+      return this.stars = Math.ceil(index / 2);
     }
 
 
