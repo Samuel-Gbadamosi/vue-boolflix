@@ -19,6 +19,10 @@ body {
   color: yellow;
 }
 
+.ray{
+  color: white;
+}
+
 .container {
     width: 1070px;
     height: 100%;
@@ -60,6 +64,7 @@ header img {
     background: rgb(46, 58, 70);
     text-align: center;
 }
+
 
 .cd img {
     max-width: 100%;

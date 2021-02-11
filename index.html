@@ -28,7 +28,7 @@
           <div class="container">
               <img class="logo" src="https://cdn.pixabay.com/photo/2021/01/30/23/31/netflix-logo-5965538__340.png" alt="logo-pic">
 
-              <input type="text"  placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriestv" v-model="query">
+              <input type="text"  placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriesTv" v-model="query">
           </div>
 
 
@@ -42,13 +42,13 @@
             <img v-if="(m.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + m.poster_path"  alt="">
             <img v-else="" :src="empty" class="empty" alt="">
               <h3>{{m.original_title}} </h3>
-              <span>Title : {{m.title}}</span>
+              <span class="ray">Title : {{m.title}}</span>
 
-              <span>Language : {{m.original_language}}</span>
-              <span> votes : {{ m.vote_average}}</span>
+              <span class="ray">Language : {{m.original_language}}</span>
+
               <ul>
                 <li>
-                  <i v-for="s in iconVote(m.vote_average)" class="far fa-star" class="col"> </i>
+                Ratings:  <i v-for="s in iconVote(m.vote_average)" class="far fa-star" class="col"></i>
 
                 </li>
 
@@ -65,9 +65,14 @@
             <img v-else="" :src="empty" class="empty" alt="">
             <ul>
               <h3>{{tv.original_name}} </h3>
-              <span>Title : {{tv.title}}</span>
-              <span>Language : {{tv.original_language}}</span>
-              <span> votes : {{tv.average}}</span>
+              <span class="ray">Title : {{tv.title}}</span>
+              <span class="ray">Language : {{tv.original_language}}</span>
+
+                <li>
+                  <i v-for="s in iconVote(tv.vote_average)" class="far fa-star" class="col"> </i>
+
+                </li>
+
 
 
             </ul>
