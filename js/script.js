@@ -1,7 +1,6 @@
 var app = new Vue({
   el: '#app',
   data: {
-    en:'https://media.istockphoto.com/photos/full-frame-image-of-england-flag-picture-id479199262?b=1&k=6&m=479199262&s=170667a&w=0&h=sH0p8ZZNIajvX-0CRPPmXfXWWRErSlXFYQ8g5ldQR0M=',
     stars:0,
     empty:'error 404 Unavailable',
     tvseries: [],
@@ -46,7 +45,9 @@ var app = new Vue({
     iconVote(index){
 
       return this.stars = Math.ceil(index / 2);
-    }
+    },
+
+
 
 
 

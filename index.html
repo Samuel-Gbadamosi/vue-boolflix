@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
   <!-- link ajax -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js" integrity="sha512-bZS47S7sPOxkjU/4Bt0zrhEtWx0y0CRkhEp8IckzK+ltifIIE9EMIMTuT/mEzoIMewUINruDBIR/jJnbguonqQ==" crossorigin="anonymous"></script>
   <!-- link ajax -->
-<!-- link css -->
+  <!-- link css -->
   <link rel="stylesheet" href="css/style.css">
 
   <!-- font aweomse -->
@@ -19,17 +20,19 @@
   <!-- font aweomse -->
 
 </head>
+
 <body>
+
   <body>
-     <div id="app">
+    <div id="app">
 
 
       <header>
-          <div class="container">
-              <img class="logo" src="https://cdn.pixabay.com/photo/2021/01/30/23/31/netflix-logo-5965538__340.png" alt="logo-pic">
+        <div class="container">
+          <img class="logo" src="https://cdn.pixabay.com/photo/2021/01/30/23/31/netflix-logo-5965538__340.png" alt="logo-pic">
 
-              <input type="text"  placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriesTv" v-model="query">
-          </div>
+          <input type="text" placeholder="search for a movie " @keyup.enter="search" @keyup.enter="seriesTv" v-model="query">
+        </div>
 
 
       </header>
@@ -37,56 +40,59 @@
       <!--  -->
 
       <div class="cds-container container">
-          <!-- Disco ad esempio -->
-          <div class="cd" v-for="m in movies">
-            <img v-if="(m.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + m.poster_path"  alt="">
-            <img v-else="" :src="empty" class="empty" alt="">
-              <h3>{{m.original_title}} </h3>
-              <span class="ray">Title : {{m.title}}</span>
+        <!-- Disco ad esempio -->
+        <div class="cd" v-for="m in movies">
+          <img v-if="(m.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + m.poster_path" alt="">
+          <img v-else="" :src="empty" class="empty" alt="">
+          <h3>{{m.original_title}} </h3>
+          <span class="ray">Title : {{m.title}}</span>
 
-              <span class="ray">Language : {{m.original_language}}</span>
+          <span class="ray">Language : {{m.original_language}}</span>
 
-              <ul>
-                <li>
-                Ratings:  <i v-for="s in iconVote(m.vote_average)" class="far fa-star" class="col"></i>
-
-                </li>
-
-              </ul>
+          <ul>
+            <li>
+              <small>Ratings</small> <i v-for="s in iconVote(m.vote_average)" class="fas fa-star" class="col"></i>
+              <i v-for="s in 5 - iconVote(m.vote_average)" class="far fa-star" class=""></i>
 
 
+            </li>
 
-
-          </div>
-
-
-          <div class="cd" v-for="tv in tvseries">
-            <img v-if="(tv.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + tv.poster_path"  alt="">
-            <img v-else="" :src="empty" class="empty" alt="">
-            <ul>
-              <h3>{{tv.original_name}} </h3>
-              <span class="ray">Title : {{tv.title}}</span>
-              <span class="ray">Language : {{tv.original_language}}</span>
-
-                <li>
-                  <i v-for="s in iconVote(tv.vote_average)" class="far fa-star" class="col"> </i>
-
-                </li>
+          </ul>
 
 
 
-            </ul>
-          </div>
+
+        </div>
+
+
+        <div class="cd" v-for="tv in tvseries">
+          <img v-if="(tv.poster_path !== null)" :src=" 'https://image.tmdb.org/t/p/w342' + tv.poster_path" alt="">
+          <img v-else="" :src="empty" class="empty" alt="">
+          <ul>
+            <h3>{{tv.original_name}} </h3>
+            <span class="ray">Title : {{tv.title}}</span>
+            <span class="ray">Language : {{tv.original_language}}</span>
+
+            <li>
+              <i v-for="s in iconVote(tv.vote_average)" class="far fa-star" class="col"> </i>
+
+            </li>
+
+
+
+          </ul>
+        </div>
       </div>
 
-  <div>
+      <div>
 
-  </div>
+      </div>
       <script src="js/script.js" charset="utf-8"></script>
   </body>
 
 
 
-<script src="js/script.js" charset="utf-8"></script>
+  <script src="js/script.js" charset="utf-8"></script>
 </body>
+
 </html>
