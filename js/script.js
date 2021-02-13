@@ -22,6 +22,7 @@ var app = new Vue({
         .then((result) => {
           this.movies = result.data.results;
           console.log(this.movies);
+
         })
         .catch((error) => alert('errori'));
 
@@ -38,6 +39,7 @@ var app = new Vue({
         .then((result) => {
           this.tvseries = result.data.results;
           console.log(this.tvseries);
+
         })
         .catch((error) => alert('errori'));
 
@@ -46,6 +48,7 @@ var app = new Vue({
 
       return this.stars = Math.ceil(index / 2);
     },
+    
 
 
 
